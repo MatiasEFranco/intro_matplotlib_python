@@ -37,10 +37,10 @@ def simple_plot():
     ax = fig.add_subplot()  # Definir cuantos gráficos tendrá
 
     ax.plot(x, y)           # Graficar con plot en mi gráfico "ax"
-    ax.set_facecolor('whitesmoke')
-    ax.set_title("Mi senoidal")
-    ax.set_ylabel("Amplitud")
-    ax.set_xlabel("[rad]")
+    ax.set_facecolor('whitesmoke') # color de fondo
+    ax.set_title("Mi senoidal") # Titulo
+    ax.set_ylabel("Amplitud")   # nombre a la etiqueta Y
+    ax.set_xlabel("[rad]")      # nombre a la etiqueta X
     plt.show()              # Mostrar el gráfico
 
 
@@ -51,23 +51,23 @@ def multi_plot():
     fig = plt.figure()
     ax = fig.add_subplot()
 
-    ax.plot(x, np.sin(x), color='b', marker='^', label='y=sin(x)')
-    ax.plot(x, 2*np.sin(x), color='c', marker='+', label='y=2*sin(x)')
-    ax.plot(x, 3*np.sin(x), color='g', marker='.', label='y=3*sin(x)')
-    ax.plot(x, 4*np.sin(x), color='k', label='y=4*sin(x)')
+    ax.plot(x, np.sin(x), color='b', marker='^', label='y=sin(x)')      # Se agrega una funcion nueva o grafico
+    ax.plot(x, 2*np.sin(x), color='c', marker='+', label='y=2*sin(x)')  # Se agrega una funcion nueva o grafico
+    ax.plot(x, 3*np.sin(x), color='g', marker='.', label='y=3*sin(x)')  # Se agrega una funcion nueva o grafico
+    ax.plot(x, 4*np.sin(x), color='k', label='y=4*sin(x)')              # Se agrega una funcion nueva o grafico
     ax.set_facecolor('whitesmoke')
     ax.set_title("Senoidales")
     ax.set_ylabel("Y[amplitud]")
     ax.set_xlabel("X[rads]")
-    ax.set_xlim([0, 4*np.pi])  # Limito el eje "Y" entre 0 y 4*pi
-    ax.set_ylim([-4, 4])       # Limito el eje "X" entre -4 y 4
-    ax.legend()
+    ax.set_xlim([0, 4*np.pi])  # Limito el eje "X" entre 0 y 4*pi
+    ax.set_ylim([-4, 4])       # Limito el eje "Y" entre -4 y 4
+    ax.legend()                # Esta instruccion es para mostrar las leyendas
     plt.show(block=False)
 
     # Dibujar 4 gráficos en una misma figura
     fig = plt.figure()
     # Ejemplo de uso --> ax = fig.add_subplot(nrows, ncols, index)
-    ax1 = fig.add_subplot(2, 2, 1)
+    ax1 = fig.add_subplot(2, 2, 1) # indica filas, columnas y la posicion del grafico
     ax2 = fig.add_subplot(2, 2, 2)
     ax3 = fig.add_subplot(2, 2, 3)
     ax4 = fig.add_subplot(2, 2, 4)
@@ -164,7 +164,7 @@ def grid():
     ax1.plot(x, y, color='darkred')
     ax1.set_facecolor('whitesmoke')
     ax1.grid(ls='dashed')
-    ax2.plot(x, y, c='darkgreen', ls='--')
+    ax2.plot(x, y, c='darkgreen', ls='--')  # aqui indicamos las lineas de puntos en el grafico
     ax2.set_facecolor('whitesmoke')
     ax2.grid(ls='dashdot')
     plt.show()
@@ -205,7 +205,7 @@ def scatter_plot():
     ax1.plot(x, y, c='darkcyan')
     ax1.set_facecolor('whitesmoke')
     ax1.grid('solid')
-    ax2.scatter(x, y, c='darkcyan')
+    ax2.scatter(x, y, c='darkcyan') # grafica de puntos difernecias con "plot"
     ax2.set_facecolor('whitesmoke')
     ax2.grid('solid')
     plt.show()
@@ -231,14 +231,14 @@ def scatter_plot():
 def bar_plot():
     # Utilizar el gráfico de barras para comparar el consumo
     # de fruta por trimestre
-    trimestres = ['En-Mar', 'Abr-Jun', 'Jul-Sep', 'Oct-Dic']
-    fruta = [25, 23, 16, 21]
+    trimestres = ['En-Mar', 'Abr-Jun', 'Jul-Sep', 'Oct-Dic'] # aqui se define el eje X
+    fruta = [25, 23, 16, 21]    # aqui se definiria el eje Y
 
     fig = plt.figure()
     fig.suptitle('Gastos Comida', fontsize=16)
     ax = fig.add_subplot()
 
-    ax.bar(trimestres, fruta, label='fruta')
+    ax.bar(trimestres, fruta, label='fruta') # aqui le indicamos cual es el  eje X y el eje Y ax.bar(X,Y,label)
     ax.set_facecolor('whitesmoke')
     ax.legend()
     plt.show()

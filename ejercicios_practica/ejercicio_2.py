@@ -46,4 +46,15 @@ if __name__ == '__main__':
 
     # Crear acá su gráfico
 
+    fig = plt.figure()                  # Definir tamaño figura
+    ax = fig.add_subplot()              # Definir cuantos gráficos tendrá
+
+    ax.plot(x, y1, color='k', marker='.', label= 'y1=x**2')   # Graficar con plot en mi gráfico "ax"
+    ax.plot(x, y2, color='m', marker='+', label= 'y2=x**3')   # Graficar con plot en mi gráfico "ax"
+    ax.set_facecolor('whitesmoke')      # color de fondo
+    ax.set_title("Grafico")          # titulo
+    ax.set_ylabel("Eje Y")              # nombre a la etiqueta Y
+    ax.set_xlabel("Eje X")              # nombre a la etiqueta X
+    ax.legend()                         # mostramos la leyenda
+    plt.show()                          # mostramos el grafico
     print("terminamos")

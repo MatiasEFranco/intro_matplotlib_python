@@ -34,4 +34,14 @@ if __name__ == '__main__':
 
     # Crear acá su gráfico
 
+    fig = plt.figure()
+    fig.suptitle('Tangente Hiperbólica', fontsize=16)    # colocamos el titulo
+    ax1 = fig.add_subplot()
+
+    ax1.scatter(x, y, marker='.', label= 'y = tanh(x)', c='darkcyan') # grafica de puntos difernecias con "plot"
+    ax1.set_facecolor('whitesmoke')
+    ax1.grid('solid')
+    ax1.legend()                    # mostramos la leyenda
+    plt.show()                      # mostramos el grafico
+
     print("terminamos")

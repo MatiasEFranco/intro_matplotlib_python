@@ -29,10 +29,22 @@ if __name__ == '__main__':
 
     # Alumno: Crear una "figura" y crear un "ax" con add_subplot
     # Graficar el "line plot" de "y" en función de "x"
-
+   
     # Alumno: Colocar la leyenda y el label con el nombre de la función
     # Darle color a la línea a su elección
 
     # Crear acá su gráfico
+    
+    fig = plt.figure()                  # Definir tamaño figura
+    ax = fig.add_subplot()              # Definir cuantos gráficos tendrá
 
+    ax.plot(x, y, color='k', marker='.', label= 'y=x**2')   # Graficar con plot en mi gráfico "ax"
+    ax.set_facecolor('whitesmoke')      # color de fondo
+    ax.set_title("Cuadratica")          # titulo
+    ax.set_ylabel("Eje Y")              # nombre a la etiqueta Y
+    ax.set_xlabel("Eje X")              # nombre a la etiqueta X
+    ax.legend()                         # mostramos la leyenda
+    plt.show()                          # mostramos el grafico
+
+    
     print("terminamos")
